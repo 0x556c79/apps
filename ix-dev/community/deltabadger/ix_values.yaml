@@ -1,0 +1,14 @@
+images:
+  image:
+    repository: ghcr.io/deltabadger/deltabadger
+    tag: latest
+  container_utils_image:
+    repository: ixsystems/container-utils
+    tag: 1.0.2
+consts:
+  deltabadger_web_container_name: deltabadger
+  deltabadger_jobs_container_name: deltabadger-jobs
+  deltabadger_migrate_container_name: deltabadger-migrate
+  perms_container_name: deltabadger-perms
+  storage_path: /app/storage
+  logs_path: /app/log

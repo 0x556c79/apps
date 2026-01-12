@@ -1,0 +1,48 @@
+resources:
+  limits:
+    cpus: 2.0
+    memory: 4096
+
+deltabadger:
+  secret_key_base: "dev-secret-key-not-for-production-test-only"
+  devise_secret_key: "dev-devise-key-not-for-production-test-only"
+  app_encryption_key: "dev-encryption-key00000000000000"
+  app_root_url: ""
+  smtp_address: "localhost"
+  smtp_port: 25
+  smtp_domain: "localhost"
+  smtp_username: ""
+  smtp_password: ""
+  notifications_sender: "noreply@localhost"
+  orders_frequency_limit: 60
+  additional_envs: []
+
+run_as:
+  user: 568
+  group: 568
+
+network:
+  web_port:
+    bind_mode: published
+    port_number: 30300
+    host_ips: []
+  host_network: false
+
+ix_volumes:
+  test_deltabadger_data: /opt/tests/mnt/deltabadger/data
+  test_deltabadger_logs: /opt/tests/mnt/deltabadger/logs
+
+storage:
+  data:
+    type: ix_volume
+    ix_volume_config:
+      dataset_name: test_deltabadger_data
+      acl_enable: false
+  logs:
+    type: ix_volume
+    ix_volume_config:
+      dataset_name: test_deltabadger_logs
+      acl_enable: false
+  additional_storage: []
+
+labels: []
